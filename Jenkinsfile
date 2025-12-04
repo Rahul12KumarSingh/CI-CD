@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+     tools { 
+        nodejs "node18"   // <--- use name configured in Jenkins
+    }
+
     stages {
 
         stage('Checkout') {
