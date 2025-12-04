@@ -6,6 +6,10 @@ pipeline {
         PORT = '3000'
         BRANCH_NAME = "main"
     }
+
+     tools {
+        nodejs "node16"
+    }
  
 
     stages {
