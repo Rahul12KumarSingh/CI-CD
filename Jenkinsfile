@@ -1,13 +1,24 @@
 pipeline {
     agent any
 
+    environment {
+        NODE_ENV = 'production' ,
+        PORT = '3000',
+        BRANCH_NAME = "main"
+    }
  
 
     stages {
 
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout scm 
+
+                script{
+                    echo "Checked out branch: ${env.BRANCH_NAME}"
+                    echo "Running on port: ${env.PORT}"
+                    echo "Running in environment: ${env.NODE_ENV}"
+                }
             }
         }
 
